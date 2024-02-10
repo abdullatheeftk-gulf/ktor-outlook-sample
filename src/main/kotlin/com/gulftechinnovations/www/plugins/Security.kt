@@ -25,8 +25,8 @@ fun Application.configureSecurity(
                     name="my-app",
                     authorizeUrl = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
                     accessTokenUrl = "https://login.microsoftonline.com/common/oauth2/v2.0/token",
-                    clientId = "e5d49319-e732-4d11-a787-245e44b0bbc2",
-                    clientSecret = "gPm8Q~KI5_ygA93ZYcjo6aI3q2OuW6q.B8JdZc0s",
+                    clientId = config.property("outlook.clientId").getString(),
+                    clientSecret = config.property("outlook.clientSecret").getString(),
                     defaultScopes = scopes,
                     requestMethod = HttpMethod.Post,
                     onStateCreated = { call, state ->
